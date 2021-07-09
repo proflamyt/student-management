@@ -1,0 +1,49 @@
+
+
+    <div class="sidebar">
+      <div class="sidebar-wrapper">
+        
+        <div class="logo">
+          <a  class="simple-text logo-mini">
+            BD
+          </a>
+          <a  class="simple-text logo-normal">
+            Django Dashboard
+          </a>
+        </div>
+
+        <ul class="nav">
+        {% if request.user.is_authenticated %}
+          <li class="{% if 'index' in segment %} active {% endif %} ">
+            <a href="/">
+              <i class="tim-icons icon-chart-pie-36"></i>
+              <p>Dashboard</p>
+            </a>
+          </li>
+      
+        
+         <li class="{% if 'index' in segment %} active {% endif %} ">
+            <a href="/ui-tables.html">
+              <i class="tim-icons icon-chart-pie-36"></i>
+              <p>Attendance</p>
+            </a>
+          </li>
+           <li class="{% if 'index' in segment %} active {% endif %} ">
+            <a href="/register">
+              <i class="tim-icons icon-chart-pie-36"></i>
+              <p>Register Students</p>
+            </a>
+          </li>
+            <a href="{% url 'logout' %}" >
+              <i class="tim-icons icon-user-run"></i>
+              <p>Logout</p>
+            </a>
+          </li>
+          {% else %}
+          
+          {% endif %}
+                    
+        </ul>
+        
+      </div>
+    </div>
